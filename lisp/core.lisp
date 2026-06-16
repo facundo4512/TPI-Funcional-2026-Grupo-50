@@ -15,3 +15,17 @@
 		((equal (symbol-name (tiempo-color tiempo)) "ROJO") (format nil "Tiempo <~a>: La luz a cambiado de amarrilo a rojo" (formato-localtime tiempo)))
 	)
 )
+
+;; FASE 2: integracion de la libreria local-time
+;; ========================================================
+;; FUNCIÓN: formato-localtime
+;; NATURALEZA: Pura (mismo epoch siempre devuelve el mismo string)
+;; ESTRATEGIA: Composicion de funciones (local-time:unix-to-timestamp + local-time:format-timestring)
+;; IMPACTO: No destructiva (no modifica el argumento epoch)
+;; ========================================================
+
+(defun formato-localtime (epoch)
+	(local-time:format-timestring nil 
+		(local-time:unix-to-timestamp (- epoch 2208988800)) :format '("[" (:year 4) "-" (:month 2) "-" (:day 2) " " (:hour 2) ":" (:min 2) ":" (:sec 2) "]"))
+
+)
