@@ -29,3 +29,21 @@
 		(local-time:unix-to-timestamp (- epoch 2208988800)) :format '("[" (:year 4) "-" (:month 2) "-" (:day 2) " " (:hour 2) ":" (:min 2) ":" (:sec 2) "]"))
 
 )
+
+;; Requerimiento 4a
+;; ======================================================== 
+;; FUNCIÓN:	Duracion-ciclo
+;; NATURALEZA: Pura (Dados los mismos tiempos, siempre calcula y retorna la misma lista)
+;; ESTRATEGIA: Condicional y operaciones aritmetricas basicas
+;; IMPACTO: No destructiva
+;; ========================================================
+
+(defun duracion-ciclo (t-rojo t-amarillo t-verde); en ambos casos retorna una lista con el total de segundos y con un simbolo si es optimo o no
+
+	(let ((total (+ t-rojo t-amarillo t-verde)))
+		(if (and (>= total 35) (<= total 150))
+			(list total 'Rango-optimo)
+			(list total 'fuera-de-rango)
+		)
+	)
+)
