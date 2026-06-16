@@ -63,3 +63,15 @@
 		(t "El ciclo es optimo para estanderes de ingenieria de trafico")
 	)
 )
+
+;; Requerimiento 5
+;; ======================================================== 
+;; FUNCIÓN: ciclos-por-tiempo
+;; NATURALEZA: Pura (el calculo matematico es determinista y libres de efectos secundarios)
+;; ESTRATEGIA: Composicion de funciones y operaciones aritmetricas (llamda a la funcion "duracion-ciclo") 
+;; IMPACTO:
+;; ========================================================
+
+(defun ciclos-por-tiempo (minutos t-rojo t-amarillo t-verde)
+	(float (/ (* minutos 60) (first (duracion-ciclo t-rojo t-amarillo t-verde))))
+)
