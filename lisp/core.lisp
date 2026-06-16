@@ -47,3 +47,19 @@
 		)
 	)
 )
+
+;; Requerimiento 4b
+;; ======================================================== 
+;; FUNCIÓN: recomendacion-ciclo
+;; NATURALEZA: Pura (para la misma lista de entrada, el texto de retorno no cambia)
+;; ESTRATEGIA: Condicional mediante COND 
+;; IMPACTO: No destructiva
+;; ========================================================
+
+(defun recomendacion-ciclo (totalCiclo); recibe como parametro la lista retornada por la funcion "duracion-ciclo"
+	(cond 
+		((< (first totalCiclo) 35) "El ciclo es bajo, se recomienda uno que este dentro de 35-150")
+		((> (first totalCiclo) 150) "El ciclo es demaciado alto, se recomienda uno que este dentro de 35-150")
+		(t "El ciclo es optimo para estanderes de ingenieria de trafico")
+	)
+)
