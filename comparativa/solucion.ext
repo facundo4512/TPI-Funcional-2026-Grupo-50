@@ -1,0 +1,37 @@
+# defmodule Automata do
+#   def transicion_de_estado(color_actual, cambiar_a) do
+#     cond do
+#       color_actual == :en_rojo and cambiar_a == :verde ->
+#         [color_actual, "-->", :cambiar_a_verde]
+      
+#       color_actual == :en_verde and cambiar_a == :amarillo ->
+#         [color_actual, "-->", :cambiar_a_amarillo]
+      
+#       color_actual == :en_amarillo and cambiar_a == :rojo ->
+#         [color_actual, "-->", :cambiar_a_rojo]
+      
+#       true ->
+#         [color_actual, :accion_por_defecto]
+#     end
+#   end
+# end
+
+# Automata.transicion_de_estado(:en_rojo, :verde)
+
+
+
+
+
+
+defmodule colores do
+  def tiempo_colores (tiempo) do
+    cond do
+      matematica.segundoExacto(tiempo) >= 0 and matematica.segundoExacto(tiempo) <= 89 -> [:rojo]
+      
+      matematica.segundoExacto(tiempo) >= 90 and matematica.segundoExacto(tiempo) <= 95 -> [:amarillo]
+      
+      matematica.segundoExacto(tiempo) >= 96 and matematica.segundoExacto(tiempo) <= 215 -> [:verde]
+      
+    end
+  end
+end
