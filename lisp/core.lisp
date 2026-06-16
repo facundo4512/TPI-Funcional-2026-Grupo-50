@@ -75,3 +75,21 @@
 (defun ciclos-por-tiempo (minutos t-rojo t-amarillo t-verde)
 	(float (/ (* minutos 60) (first (duracion-ciclo t-rojo t-amarillo t-verde))))
 )
+
+;; Requerimiento 6
+;; ======================================================== 
+;; FUNCIÓN: porcentaje-porColor
+;; NATURALEZA: Pura (el cálculo matemático es determinista y libre de efectos secundarios)
+;; ESTRATEGIA: Composición de funciones y operaciones aritméticas (llamada a la función "duración-ciclo")
+;; IMPACTO:	No destrucitvas (devuelve el mismo valor para los mismos parametros)
+;; ========================================================
+
+(defun porcentaje-porColor (t-rojo t-amarillo t-verde); se pasa los tres timepos y la lista retornada por la funcion duracion ciclo
+	(let ((ciclo (duracion-ciclo t-rojo t-amarillo t-verde)))
+		(list 
+			(list 'rojo (float (* (/ t-rojo (first ciclo)) 100)))
+			(list 'amarillo (float (* (/ t-amarillo (first ciclo)) 100)))
+			(list 'verde (float (* (/ t-verde (first ciclo)) 100))); mientras los segundos de los colores no cambien con el tiempo el porcentaje
+		)														   ; sigue siendo el mismo sin importar las horas
+	)
+)
