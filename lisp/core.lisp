@@ -16,6 +16,22 @@
 		(t (list color-actual 'accion-por-defecto))
 	)
 )
+;; Requerimiento 2
+;; ======================================================== 
+;; FUNCIÓN: Tiempo-color
+;; NATURALEZA: Pura (Implementada mediante el uso de COND y operadores
+;; relacionales para determinar el color correspondiente.) 
+;; ESTRATEGIA: Condicional (Implementada mediante el uso del COND) 
+;; IMPACTO: No destructiva (no modifica los argumentos)
+;; ======================================================== 
+
+(defun tiempo-color (tiempo)
+	(cond 
+		((and (>= (segundoExacto tiempo) 0) (<= (segundoExacto tiempo)  89)) 'ROJO)
+		((and (>= (segundoExacto tiempo) 90) (<= (segundoExacto tiempo) 95)) 'AMARILLO)
+		((and (>= (segundoExacto tiempo) 96) (<= (segundoExacto tiempo) 215)) 'VERDE)
+	)
+)
 ;; Requerimiento 3
 ;; ======================================================== 
 ;; FUNCIÓN: logging
