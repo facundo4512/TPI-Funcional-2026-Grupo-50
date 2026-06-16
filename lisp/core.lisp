@@ -16,6 +16,16 @@
 		(t (list color-actual 'accion-por-defecto))
 	)
 )
+;; ======================================================== 
+;; FUNCIÓN: segundoExacto
+;; NATURALEZA: Pura (su salida dependen unicamente unix. Utiliza operaciones aritmetricas)
+;; ESTRATEGIA: aritmetrica (calcula es segundo exacto dentro del ciclo del semaforo, ademas combierte el tiemo universar a unix) 
+;; IMPACTO: No destructivas (no destruye el argumento "unix")
+;; ========================================================
+
+(defun segundoExacto (unix) ; evuelve el segundo exacto del semaforo
+	(mod (- unix 2208988800) 216); el 216 es el ciclo completo del semaforo
+)
 ;; Requerimiento 2
 ;; ======================================================== 
 ;; FUNCIÓN: Tiempo-color
