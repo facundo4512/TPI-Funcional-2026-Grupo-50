@@ -1,5 +1,21 @@
 (ql:quickload "local-time") ;carga del archivo "localtime" de la libreria 
 
+;; Requerimiento 1
+;; ======================================================== 
+;; FUNCIÓN: transicion 
+;; NATURALEZA: Pura (para los mismos parametros simpre devuelve el mismo resultado) 
+;; ESTRATEGIA: Condicional (Implementada mediante el uso del COND) 
+;; IMPACTO: No destructiva (no modifica los argumentos)
+;; ======================================================== 
+
+(defun transicion-de-Estado (color-actual cambiar-a)
+	(cond
+		((and (eq color-actual 'en-rojo) (eq cambiar-a 'verde)) (list color-actual '--> 'cambiar-a-verde))
+		((and (eq color-actual 'en-verde) (eq cambiar-a 'amarillo)) (list color-actual '--> 'cambiar-a-amarillo))
+		((and (eq color-actual 'en-amarillo) (eq cambiar-a 'rojo)) (list color-actual '--> 'cambiar-a-rojo))
+		(t (list color-actual 'accion-por-defecto))
+	)
+)
 ;; Requerimiento 3
 ;; ======================================================== 
 ;; FUNCIÓN: logging
