@@ -25,7 +25,6 @@
 TPI-Funcional-2026-Grupo-50/
 ├── lisp/
 │   ├── core.lisp        <-- Código de los requerimientos 1 al 6 en Common Lisp (con comentarios de tipo)
-│   └── config.json      <-- Archivo de configuración (si eligieron cl-json en Fase 2)
 ├── comparativa/
 │   └── solucion.exs     <-- Código en el lenguaje asignado (con comentarios de tipo según su sintaxis)
 ├── docs/
